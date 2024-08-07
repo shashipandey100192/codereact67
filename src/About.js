@@ -26,7 +26,7 @@ export function Mycontact1()
   return(
     <Fragment>
       <div className='page'>
-        <h1>display image from public folder</h1>
+        <h1>display image from public folder sdfsd</h1>
         <img src='./images/img2.jpg' width="100"/>
       <h1>display image from src folder</h1>
         <img src={Myimg} width="200"/>
