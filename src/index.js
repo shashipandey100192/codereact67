@@ -7,6 +7,7 @@ import "./style.css";
 import Contactus from './Contactus';
 import Mybspage from './Mybspage';
 import Myreactbspage from './Myreactbspage';
+import Mymuipage from './Mymuipage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
     <Contactus/>
     <Mybspage/>
     <Myreactbspage/>
+    <Mymuipage/>
     
 
     
