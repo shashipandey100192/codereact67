@@ -2,6 +2,7 @@ import React from 'react'
 import Mynav from '../shares/Mynav'
 import Mysidebar from '../shares/Mysidebar'
 import Myfooter from '../shares/Myfooter'
+import { Outlet } from 'react-router-dom'
 
 function Mylandingpage() {
   return (
@@ -17,10 +18,9 @@ function Mylandingpage() {
     </div>
     <div className='col-md-10'>
         <div className='page1'>
-
+                <Outlet/>
         </div>
         <Myfooter/>
-
     </div>
 </div>
 
