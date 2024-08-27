@@ -17,6 +17,7 @@ function Mysidebar() {
             <li><Link to="/dashboard" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Dashboard</Link></li>
             <li><Link to="service" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Service</Link></li>
             <li><Link to="contact" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Contact</Link></li>
+            <li><Link to="myprops" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Props</Link></li>
           </ul>
         </div>
       </li>
