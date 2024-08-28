@@ -14,6 +14,7 @@ import Contactpage from './modules/dashboard/pages/Contactpage';
 import Aboutpage from './modules/dashboard/pages/Aboutpage';
 import Mydetailspage from './modules/dashboard/pages/Mydetailspage';
 import Parentpage from './modules/dashboard/pages/Parentpage';
+import Mygraphpage from './modules/dashboard/pages/Mygraphpage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,6 +30,7 @@ root.render(
             <Route path='contact' element={<Contactpage/>}></Route>
             <Route path='about' element={<Aboutpage/>}></Route>
             <Route path='myprops' element={<Parentpage/>}></Route>
+            <Route path='mygraph' element={<Mygraphpage/>}></Route>
             <Route path='contact/detailspage/:id' element={<Mydetailspage/>}/>
             <Route path='*' element={<Myerror/>}></Route>
         </Route>
