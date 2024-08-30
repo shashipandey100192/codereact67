@@ -17,6 +17,7 @@ import Aboutpage from './modules/dashboard/pages/Aboutpage';
 import Mydetailspage from './modules/dashboard/pages/Mydetailspage';
 import Parentpage from './modules/dashboard/pages/Parentpage';
 import Mygraphpage from './modules/dashboard/pages/Mygraphpage';
+import Myfeaturespage from './modules/dashboard/pages/Myfeaturespage';
 // import Mylazypage from './modules/dashboard/pages/Mylazypage';
 
 const Mylazypage = lazy(()=>import('./modules/dashboard/pages/Mylazypage'));
@@ -41,6 +42,7 @@ root.render(
               </Suspense>}>
 
               </Route>
+              <Route path='features' element={<Myfeaturespage/>}/>
 
             <Route path='*' element={<Myerror/>}></Route>
         </Route>
