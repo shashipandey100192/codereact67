@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { students67 } from '../../Mydata';
 
 function Homepage() {
+    const [x,y]=useState({})
+
+    const  mylocal = ()=>{
+        let a = JSON.parse(localStorage.getItem("formdata"));
+        console.log(a);
+        y(a)
+    }
+useEffect(()=>{
+    mylocal();
+},[])
+
+
     return (
         <div className='container-fluid'>
             <div className='row'>
@@ -26,6 +38,17 @@ function Homepage() {
 
                 
             </div>
+
+                <div className='row'>
+                    <div className='col-12 p-5 bg-dark text-white'>
+                            <h1>data from local storage</h1>
+                            <h4>{x.fullname}</h4>
+                            <h4>{x.email}</h4>
+                            <h4>{x.gender}</h4>
+                            
+                    </div>
+                </div>
+
         </div>
     )
 }
