@@ -7,7 +7,11 @@ function Homepage() {
     const  mylocal = ()=>{
         let a = JSON.parse(localStorage.getItem("formdata"));
         console.log(a);
-        y(a)
+        if(a)
+        {
+            y(a)
+        }
+        
     }
 useEffect(()=>{
     mylocal();
@@ -42,7 +46,7 @@ useEffect(()=>{
                 <div className='row'>
                     <div className='col-12 p-5 bg-dark text-white'>
                             <h1>data from local storage</h1>
-                            <h4>{x.fullname}</h4>
+                            <h4>{x.fullname===true ?  x.fullname : "data not avail"}</h4>
                             <h4>{x.email}</h4>
                             <h4>{x.gender}</h4>
                             

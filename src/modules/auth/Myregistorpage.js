@@ -1,13 +1,25 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function Myregistorpage() {
 
+  const navigat = useNavigate();
   const {register,handleSubmit, formState: { errors }} = useForm()
 
   const mysubmit = (myformdata)=>{
     console.log(myformdata);
+    if(myformdata)
+    {
+      toast.success("welcome to success registor");
+      setTimeout(()=>{
+        navigat("/");
+      },2000)
+      
+      
+    }
 
     localStorage.setItem("formdata",JSON.stringify(myformdata));
   }
@@ -124,6 +136,7 @@ function Myregistorpage() {
         </div>
       </div>
     </div>
+    <ToastContainer/>
     </form>
   )
 }
