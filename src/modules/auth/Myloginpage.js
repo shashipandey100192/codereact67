@@ -4,9 +4,9 @@ function Myloginpage() {
     return (
         <div className='container'>
             <div className='row justify-content-center'>
-                <div className='col-md-5 bg-light shadow p-3 rounded'>
+                <div className='col-md-5 bg-light shadow p-3 rounded '>
 
-                    <div className='container-fluid'>
+                    <div className='container-fluid bg-info'>
                         <div className='row'>
                     
                         <div className='col-md-12 text-center'>
