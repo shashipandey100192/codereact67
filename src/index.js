@@ -19,6 +19,10 @@ import Mydetailspage from './modules/dashboard/pages/Mydetailspage';
 import Parentpage from './modules/dashboard/pages/Parentpage';
 import Mygraphpage from './modules/dashboard/pages/Mygraphpage';
 import Myfeaturespage from './modules/dashboard/pages/Myfeaturespage';
+import Myhomepage from './modules/dashboard/nestedpage/Myhomepage';
+import Productmainpage from './modules/dashboard/nestedpage/Productmainpage';
+import Productlistpage from './modules/dashboard/nestedpage/Productlistpage';
+import Productreviewpage from './modules/dashboard/nestedpage/Productreviewpage';
 // import Mylazypage from './modules/dashboard/pages/Mylazypage';
 
 const Mylazypage = lazy(()=>import('./modules/dashboard/pages/Mylazypage'));
@@ -36,7 +40,15 @@ root.render(
             <Route path='contact' element={<Contactpage/>}></Route>
             <Route path='about' element={<Aboutpage/>}></Route>
             <Route path='myprops' element={<Parentpage/>}></Route>
-            <Route path='mygraph' element={<Mygraphpage/>}></Route>
+            <Route path='mygraph' element={<Mygraphpage/>}>
+              <Route path='' element={<Myhomepage/>}>
+                  <Route path='mainpage' element={<Productmainpage/>}/>
+                  <Route path='productpage' element={<Productlistpage/>}/>
+                  <Route path='reviewpage' element={<Productreviewpage/>}/>
+              
+              </Route>
+            
+            </Route>
             <Route path='contact/detailspage/:id' element={<Mydetailspage/>}/>
               <Route path='mylazy' element={<Suspense fallback={<section className='myloader'> Loading data...</section>}>
                   <Mylazypage/>

@@ -1,6 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 function Myloginpage() {
+    const mynavgat = useNavigate();
+
+    const [uservalue, seuservalue]=useState({
+        user:"",
+        pass:""
+    })
+
+const myset = (e)=>{
+    console.log(e.target.value);
+    const {name,value} = e.target;
+    seuservalue((y)=>{
+      return{
+        ...y,
+        [name]:value
+      }
+    })
+
+}
+
+const mysubmit = ()=>{
+
+        if(uservalue.user==="admin@gmail.com" && uservalue.pass==="admin")
+        {
+            alert("welcome");
+            mynavgat("/dashboard");
+        }
+        else
+        {
+            alert("wrong user and password");
+        }
+
+}
+
+
     return (
         <div className='container'>
             <div className='row justify-content-center'>
@@ -18,18 +52,18 @@ function Myloginpage() {
                             <div className='col-md-12'>
                                 <div class="mb-3">
                                     <label class="form-label">Email address</label>
-                                    <input type="email" class="form-control" />
+                                    <input type="email" class="form-control" name='user' onChange={myset} value={uservalue.user}/>
                                 </div>
                             </div>
                             <div className='col-md-12'>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" />
+                                    <input type="password" class="form-control" name='pass' value={uservalue.pass} onChange={myset}/>
                                 </div>
                             </div>
                             <div className='col-md-12 text-center'>
                                 <div class="mb-3">
-                                   <button className='btn btn-success'>Login</button>
+                                   <button className='btn btn-success' type='button' onClick={mysubmit}>Login</button>
                                    <Link to="registor">new User</Link>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 
@@ -70,6 +71,13 @@ useEffect(()=>{
     return (
 
         <Fragment>
+
+            <Outlet></Outlet>
+
+
+
+
+
             <BarChart
                 width={800}
                 height={400}
@@ -94,6 +102,9 @@ useEffect(()=>{
                 <Bar dataKey="zipcode" fill="green" />
             </BarChart>
        
+
+
+
 
         </Fragment>
 
