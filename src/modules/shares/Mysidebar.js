@@ -21,6 +21,7 @@ function Mysidebar() {
             <li><Link to="mygraph" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Charts</Link></li>
             <li><Link to="mylazy" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Lazyloading</Link></li>
             <li><Link to="features" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Features</Link></li>
+            <li><Link to="myredux" className="link-body-emphasis d-inline-flex text-decoration-none rounded">reduxpage</Link></li>
           </ul>
         </div>
       </li>

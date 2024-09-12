@@ -23,6 +23,9 @@ import Myhomepage from './modules/dashboard/nestedpage/Myhomepage';
 import Productmainpage from './modules/dashboard/nestedpage/Productmainpage';
 import Productlistpage from './modules/dashboard/nestedpage/Productlistpage';
 import Productreviewpage from './modules/dashboard/nestedpage/Productreviewpage';
+import { Provider } from 'react-redux';
+import { mydatastore } from './modules/reduxpage/Mystore';
+import Myreduxview from './modules/reduxpage/Myreduxview';
 // import Mylazypage from './modules/dashboard/pages/Mylazypage';
 
 const Mylazypage = lazy(()=>import('./modules/dashboard/pages/Mylazypage'));
@@ -31,6 +34,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Provider store={mydatastore}>
       <Routes>
         <Route path='' element={<Myloginpage/>}></Route>
         <Route path='registor' element={<Myregistorpage/>}></Route>
@@ -56,12 +60,14 @@ root.render(
 
               </Route>
               <Route path='features' element={<Myfeaturespage/>}/>
+              <Route path='myredux' element={<Myreduxview/>}/>
+              
 
             <Route path='*' element={<Myerror/>}></Route>
         </Route>
         <Route path='*' element={<Myerror/>}></Route>
-        
       </Routes>
+      </Provider>
     </BrowserRouter>
   
 

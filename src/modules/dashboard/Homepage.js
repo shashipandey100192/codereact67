@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { students67 } from '../../Mydata';
+import { useSelector,useDispatch } from 'react-redux';
+import { increment } from '../reduxpage/Myactions';
+
 
 function Homepage() {
+    const mynumber = useSelector((state) => state.counter.value)
+    const mybind = useDispatch();
     const [x,y]=useState({})
 
     const  mylocal = ()=>{
@@ -23,6 +28,8 @@ useEffect(()=>{
             <div className='row'>
                 <div className='col-12 bg-danger'>
                     <h3>Total Students: {students67.length}</h3>
+                    <h1>{mynumber}</h1>
+                    <button type='button' onClick={()=>mybind(increment())}>increment</button>
                 </div>
 
             {students67.map((d)=>{
